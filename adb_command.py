@@ -1,4 +1,4 @@
-import os
+import os, time
 
 def online():
     os.system('adb shell "svc wifi enable"')
@@ -9,17 +9,17 @@ def sign_in():
     os.system('adb shell input tap 0 600')
     os.system('adb shell input tap 1850 200')
     os.system('adb shell input tap 700 500')
-    os.system('Start-Sleep -Seconds 5')
+    time.sleep(6)
     os.system('adb shell input tap 700 700')
-    os.system('Start-Sleep -Seconds 7')
+    time.sleep(6)
     os.system('adb shell input tap 700 550')
-    os.system('Start-Sleep -Seconds 5')
+    time.sleep(3)
     os.system('adb shell input text "gm.testing.phone"')
     os.system('adb shell input tap 1850 200')
-    os.system('Start-Sleep -Seconds 5')
+    time.sleep(6)
     os.system('adb shell input text "2019Go1101"')
     os.system('adb shell input tap 1850 200')
-    os.system('Start-Sleep -Seconds 5')
+    time.sleep(6)
     os.system('adb shell input tap 1850 200')
 
 def sign_out():

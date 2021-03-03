@@ -3,12 +3,13 @@ from tkinter import ttk
 from tkinter.constants import BOTH, LEFT, SINGLE, TRUE, X
 from typing import Optional
 from adb_command import online, offline, sign_in, sign_out
+import os
 
 def Adb_command():
     query = query_listbox.get(query_listbox.curselection())
-    query = query.replace(' ', '/ ')
+    query = query.replace(' ', '\ ')
     frame = 'adb shell am start -n com.google.android.carassistant/com.google.android.apps.gsa.binaries.auto.app.voiceplate.VoicePlateActivity -e query '
-    # os.system(frame+query)
+    os.system(frame+query)
     print(frame+query)
 
 def on_select(event):
