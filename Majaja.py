@@ -6,6 +6,15 @@ from adb_command import online, offline, sign_in, sign_out
 import os
 from PIL import Image, ImageTk
 
+def creat_user():
+    name = user_enrty.get()
+    name = name.replace(' ', '\ ')
+    frame = 'adb shell pm create_user '
+    cmd = frame + name
+    os.system('adb root')
+    os.system(cmd)
+    print(cmd)
+
 def Adb_command():
     query = query_listbox.get(query_listbox.curselection())
     query = query.replace(' ', '\ ')
@@ -53,6 +62,15 @@ left_frame.pack(side=tk.LEFT)
 
 right_frame = tk.Frame(window)
 right_frame.pack(side=tk.LEFT)
+
+create_user_frame = tk.Frame(left_frame)
+create_user_frame.pack(side=tk.TOP)
+
+user_enrty = tk.Entry(create_user_frame)
+user_enrty.pack(side=tk.LEFT)
+
+user_btn = tk.Button(create_user_frame, text='Create', command=creat_user)
+user_btn.pack(side=tk.LEFT)
 
 connection_lebel = tk.Label(left_frame, text='Connection')
 connection_lebel.pack()
