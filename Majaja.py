@@ -4,6 +4,7 @@ from tkinter.constants import BOTH, LEFT, SINGLE, TRUE, X
 from typing import Optional
 from adb_command import online, offline, sign_in, sign_out
 import os
+from PIL import Image, ImageTk
 
 def Adb_command():
     query = query_listbox.get(query_listbox.curselection())
@@ -34,12 +35,29 @@ def on_select(event):
 
 window = tk.Tk()
 window.title("MAJAJA")
-window.resizable(False, False)
 
-connection_lebel = tk.Label(window, text='Connection')
+img_frame = tk.Frame(window)
+img_frame.pack(side=tk.LEFT)
+selected_image = Image.open('gi_joe.jpg')
+selected_image = selected_image.resize((240, 180), Image.ANTIALIAS)
+img = ImageTk.PhotoImage(selected_image)
+panel = tk.Label(img_frame, image=img)
+panel.pack()
+
+
+
+# window.resizable(False, False)
+
+left_frame = tk.Frame(window)
+left_frame.pack(side=tk.LEFT)
+
+right_frame = tk.Frame(window)
+right_frame.pack(side=tk.LEFT)
+
+connection_lebel = tk.Label(left_frame, text='Connection')
 connection_lebel.pack()
 
-connection_frame = tk.Frame(window)
+connection_frame = tk.Frame(left_frame)
 connection_frame.pack(side=tk.TOP)
 
 connection_var = [
@@ -52,10 +70,10 @@ for connection, num, cmd in connection_var:
     connection_rb = tk.Radiobutton(connection_frame, text=connection, variable=connection_v, value=num, command=cmd)
     connection_rb.pack(side=tk.LEFT)
 
-sign_lebel = tk.Label(window, text='Sign Status')
+sign_lebel = tk.Label(left_frame, text='Sign Status')
 sign_lebel.pack()
 
-sign_frame = tk.Frame(window)
+sign_frame = tk.Frame(left_frame)
 sign_frame.pack(side=tk.TOP)
 
 sign_var = [
@@ -70,7 +88,7 @@ for status, num, cmd in sign_var:
 
 
 # top frame that contains function label and drop-down selecter (combobox)
-top_frame = tk.Frame(window)
+top_frame = tk.Frame(right_frame)
 top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function')
 function_label.pack(side=tk.LEFT)
@@ -80,26 +98,26 @@ combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
 
 # middle that containing query label and a list box
-query_label_frame = tk.Frame(window)
-query_label_frame.pack(side=tk.TOP)
-query_label = tk.Label(
-    query_label_frame, text='Query')
-query_label.pack()
+# query_label_frame = tk.Frame(right_frame)
+# query_label_frame.pack(side=tk.TOP)
+# query_label = tk.Label(
+#     query_label_frame, text='Query')
+# query_label.pack()
 
-query_listbox_frame = tk.Frame(window)
+query_listbox_frame = tk.Frame(right_frame)
 query_listbox_frame.pack(side=tk.TOP)
 
 var = tk.StringVar()
 # var.set((1, 2, 3))
 
 query_listbox = tk.Listbox(
-    query_listbox_frame, listvariable=var, selectmode=SINGLE, yscrollcommand=TRUE, width=28)
+    query_listbox_frame, listvariable=var, selectmode=SINGLE, yscrollcommand=TRUE, width=35, height=8)
 query_listbox.pack(side=tk.RIGHT)
 
-send_btn_frame = tk.Frame(window)
-send_btn_frame.pack(side=tk.BOTTOM)
+send_btn_frame = tk.Frame(right_frame)
+send_btn_frame.pack(side=tk.TOP)
 
-send_btn = tk.Button(send_btn_frame, text='Send', width=10, command=Adb_command)
+send_btn = tk.Button(send_btn_frame, text='Majami', width=10, command=Adb_command)
 send_btn.pack(fill=X)
 
 
