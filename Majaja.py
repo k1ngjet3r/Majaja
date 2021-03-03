@@ -6,6 +6,7 @@ from adb_command import online, offline, sign_in, sign_out
 import os
 from PIL import Image, ImageTk
 
+
 def creat_user():
     name = user_enrty.get()
     name = name.replace(' ', '\ ')
@@ -15,12 +16,14 @@ def creat_user():
     os.system(cmd)
     print(cmd)
 
+
 def Adb_command():
     query = query_listbox.get(query_listbox.curselection())
     query = query.replace(' ', '\ ')
     frame = 'adb shell am start -n com.google.android.carassistant/com.google.android.apps.gsa.binaries.auto.app.voiceplate.VoicePlateActivity -e query '
     os.system(frame+query)
     print(frame+query)
+
 
 def on_select(event):
     print('[DEBUG] event: ', event)
@@ -38,13 +41,15 @@ def on_select(event):
     query_listbox.delete(0, 'end')
     for item in combobox_values[selected]:
         query_listbox.insert('end', item)
-        
-    
 
 
 window = tk.Tk()
 window.title("MAJAJA")
+window.resizable(False, False)
 
+'''
+    Frame that hold image
+'''
 img_frame = tk.Frame(window)
 img_frame.pack(side=tk.LEFT)
 selected_image = Image.open('gi_joe.jpg')
@@ -53,29 +58,22 @@ img = ImageTk.PhotoImage(selected_image)
 panel = tk.Label(img_frame, image=img)
 panel.pack()
 
+d1 = ttk.Separator(window, orient='vertical')
+d1.pack(fill=tk.Y, expand=True)
 
+'''
+    Frame that hold connection and sign status control
+'''
+connection_sign_frame = tk.Frame(window)
+connection_sign_frame.pack(side=tk.LEFT)
 
-# window.resizable(False, False)
+status_label = tk.Label(connection_sign_frame, text='Status Control')
+status_label.pack()
 
-left_frame = tk.Frame(window)
-left_frame.pack(side=tk.LEFT)
-
-right_frame = tk.Frame(window)
-right_frame.pack(side=tk.LEFT)
-
-create_user_frame = tk.Frame(left_frame)
-create_user_frame.pack(side=tk.TOP)
-
-user_enrty = tk.Entry(create_user_frame)
-user_enrty.pack(side=tk.LEFT)
-
-user_btn = tk.Button(create_user_frame, text='Create', command=creat_user)
-user_btn.pack(side=tk.LEFT)
-
-connection_lebel = tk.Label(left_frame, text='Connection')
+connection_lebel = tk.Label(connection_sign_frame, text='Connection')
 connection_lebel.pack()
 
-connection_frame = tk.Frame(left_frame)
+connection_frame = tk.Frame(connection_sign_frame)
 connection_frame.pack(side=tk.TOP)
 
 connection_var = [
@@ -85,13 +83,14 @@ connection_var = [
 connection_v = tk.IntVar()
 
 for connection, num, cmd in connection_var:
-    connection_rb = tk.Radiobutton(connection_frame, text=connection, variable=connection_v, value=num, command=cmd)
+    connection_rb = tk.Radiobutton(
+        connection_frame, text=connection, variable=connection_v, value=num, command=cmd)
     connection_rb.pack(side=tk.LEFT)
 
-sign_lebel = tk.Label(left_frame, text='Sign Status')
+sign_lebel = tk.Label(connection_sign_frame, text='Sign Status')
 sign_lebel.pack()
 
-sign_frame = tk.Frame(left_frame)
+sign_frame = tk.Frame(connection_sign_frame)
 sign_frame.pack(side=tk.TOP)
 
 sign_var = [
@@ -101,12 +100,42 @@ sign_var = [
 sign_v = tk.IntVar()
 
 for status, num, cmd in sign_var:
-    sign_rb = tk.Radiobutton(sign_frame, text=status, variable=sign_v, value=num, command=cmd)
+    sign_rb = tk.Radiobutton(sign_frame, text=status,
+                             variable=sign_v, value=num, command=cmd)
     sign_rb.pack(side=tk.LEFT)
+
+'''
+    Frame that holds user_related control
+'''
+
+user_rlt_frame = tk.Frame(window)
+user_rlt_frame.pack(side=tk.LEFT)
+
+user_label = tk.Label(user_rlt_frame, text='User/Security Control')
+user_label.pack()
+
+create_user_frame = tk.Frame(user_rlt_frame)
+create_user_frame.pack(side=tk.TOP, fill='y')
+user_name_label = tk.Label(create_user_frame, text='Name:')
+user_name_label.pack(side=tk.LEFT)
+user_enrty = tk.Entry(create_user_frame, width=10)
+user_enrty.pack(side=tk.LEFT)
+user_btn = tk.Button(create_user_frame, text='Create', command=creat_user)
+user_btn.pack(side=tk.LEFT)
+
+d2 = ttk.Separator(window, orient='vertical')
+d2.pack(fill=tk.Y, expand=True)
+
+'''
+    Frame that holds command control
+'''
+
+cmd_frame = tk.Frame(window)
+cmd_frame.pack(side=tk.LEFT)
 
 
 # top frame that contains function label and drop-down selecter (combobox)
-top_frame = tk.Frame(right_frame)
+top_frame = tk.Frame(cmd_frame)
 top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function')
 function_label.pack(side=tk.LEFT)
@@ -115,14 +144,7 @@ combobox = ttk.Combobox(top_frame, values=['Call', 'Msg', 'Navi'])
 combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
 
-# middle that containing query label and a list box
-# query_label_frame = tk.Frame(right_frame)
-# query_label_frame.pack(side=tk.TOP)
-# query_label = tk.Label(
-#     query_label_frame, text='Query')
-# query_label.pack()
-
-query_listbox_frame = tk.Frame(right_frame)
+query_listbox_frame = tk.Frame(cmd_frame)
 query_listbox_frame.pack(side=tk.TOP)
 
 var = tk.StringVar()
@@ -132,14 +154,17 @@ query_listbox = tk.Listbox(
     query_listbox_frame, listvariable=var, selectmode=SINGLE, yscrollcommand=TRUE, width=35, height=8)
 query_listbox.pack(side=tk.RIGHT)
 
-send_btn_frame = tk.Frame(right_frame)
+send_btn_frame = tk.Frame(cmd_frame)
 send_btn_frame.pack(side=tk.TOP)
 
-send_btn = tk.Button(send_btn_frame, text='Majami', width=10, command=Adb_command)
+send_btn = tk.Button(send_btn_frame, text='Majami',
+                     width=10, command=Adb_command)
 send_btn.pack(fill=X)
 
+# for MacOS
+window.call('wm', 'attributes', '.', '-topmost', '1')
 
-
-
+# for Windows
+# window.lift()
 
 window.mainloop()
