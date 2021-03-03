@@ -4,15 +4,24 @@ from tkinter.constants import BOTH, LEFT, SINGLE, TRUE, X
 from typing import Optional
 
 
-def Redirecting(*args):
-    sel = function_combobox.get()
-    if sel == 'A':
-        var.set((1, 2, 3))
-    elif sel == 'B':
-        var.set((11, 22, 33))
-    elif sel == 'C':
-        var.set((111, 222, 333))
-    query_listbox.config(listvariable=var)
+def on_select(event):
+    print('[DEBUG] event: ', event)
+    print('[DEBUG] event.widget: ', event.widget)
+    print('[DEBUG] event.widget.get(): ', event.widget.get())
+
+    selected = event.widget.get()
+
+    conbobox_values = {
+        'A': ['A1', 'A2', 'A3'],
+        'B': ['B1', 'B2', 'B3'],
+        'C': ['C1', 'C2', 'C3']
+    }
+
+    listbox.delete(0, 'end')
+    for item in combobox_values[selected]:
+        listbox.insert('end', item)
+        
+    
 
 
 window = tk.Tk()
@@ -59,8 +68,10 @@ top_frame = tk.Frame(window)
 top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function')
 function_label.pack(side=tk.LEFT)
-function_combobox = ttk.Combobox(top_frame, values=['A', 'B', 'C'])
-function_combobox.pack(side=tk.LEFT)
+
+combobox = ttk.Combobox(top_frame, values=['A', 'B', 'C'])
+combobox.pack(side=tk.LEFT)
+combobox.bind('<<ComboboxSelected>>', on_select)
 
 # middle that containing query label and a list box
 query_label_frame = tk.Frame(window)
