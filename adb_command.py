@@ -1,9 +1,19 @@
-import os, time
+import os
+import time
+
+'''
+    This is mainly designed for 10" screen only
+    There is currently no program for 13"
+'''
+
 
 def online():
     os.system('adb shell "svc wifi enable"')
+
+
 def offline():
     os.system('adb shell "svc wifi disable"')
+
 
 def sign_in():
     os.system('adb shell input tap 0 600')
@@ -22,9 +32,8 @@ def sign_in():
     time.sleep(6)
     os.system('adb shell input tap 1850 200')
 
+
 def sign_out():
     os.system('adb shell input tap 0 600')
     os.system('adb shell input tap 1850 200')
     os.system('adb shell input tap 600 700')
-
-
