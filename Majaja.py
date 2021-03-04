@@ -37,7 +37,7 @@ def on_select(event):
         'Msg': ['SMS John', 'SMS John Smith', 'Send message to John', 'Send message to John Smith'],
         'Navi': ['Navigate to Taipei 101', 'Starbucks', 'Coffee shop'],
         'Radio': ['Play FM Radio',"Play AM Radio", 'Play 1130', 'tune to 90.5 FM','Tune to 930 AM','Tune to 730 AM','Tune to 1000 AM','Previous Station','Next Station', 'Play car radio'],
-        'SMS': ['Read New messages','Read messages']
+        'SMS': ['Read New messages','Read messages', 'Please Text 0978937968 How are you?']
     }
 
     query_listbox.delete(0, 'end')
