@@ -11,7 +11,7 @@ import os, json
 def creat_user():
     name = user_enrty.get()
     name = name.replace(' ', '\ ')
-    frame = 'adb shell pm create_user '
+    frame = 'adb shell pm create-user '
     cmd = frame + name
     os.system('adb root')
     os.system(cmd)
@@ -51,7 +51,7 @@ window.resizable(False, False)
 '''
 img_frame = tk.Frame(window)
 img_frame.pack(side=tk.LEFT)
-selected_image = Image.open('gi_joe.jpg')
+selected_image = Image.open('gi_joe_majaja.jpg')
 selected_image = selected_image.resize((240, 180), Image.ANTIALIAS)
 img = ImageTk.PhotoImage(selected_image)
 panel = tk.Label(img_frame, image=img)
