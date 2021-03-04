@@ -28,18 +28,28 @@
         "phone KFC at Roosevelt Road",
         "phone Startbucks at Roosevelt Road",
         "phone Startbucks at Roosevelt Road, taipei",
-        "call john smith cell"
+        "call john smith cell",
+        "can you call 0999999",
+        "I would like to call John",
+        "I would like to call smith",
+        "I would like to call John smith"
     ],
-    "Msg":[
+    "SMS":[
         "SMS John",
         "SMS John Smith",
         "Send message to John",
-        "Send message to John Smith"
+        "Send message to John Smith",
+        "send message to Lewis","Read New messages",
+        "Read messages",
+        "Please Text 0978937968 How are you?",
+        "Reply",
+        "send message to Lewis"
     ],
     "Navi":[
         "Navigate to Taipei 101",
         "Starbucks",
-        "Coffee shop"
+        "Coffee shop",
+        "cancel navigation"
     ],
     "Radio":[
         "Play FM Radio",
@@ -52,12 +62,7 @@
         "Previous Station",
         "Next Station",
         "Play car radio"
-    ],
-    "SMS":[
-        "Read New messages",
-        "Read messages",
-        "Please Text 0978937968 How are you?",
-        "Reply"
     ]
+
 
 }

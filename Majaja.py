@@ -139,7 +139,7 @@ top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function')
 function_label.pack(side=tk.LEFT)
 
-combobox = ttk.Combobox(top_frame, values=['Call', 'Msg', 'Navi', 'Radio', 'SMS'])
+combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio'])
 combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
 
