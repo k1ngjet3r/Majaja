@@ -1,11 +1,26 @@
-  
+'''
+    This is version 0.0.1 Alpha
+
+    Still updating the function and value to the function_value.json for Google Assistant Command query
+
+    Current function including internet conncetion control, google account login or out control, create user, and Google Assistant command sender
+
+    GUI is still not optimized, FYI
+'''
+
 from tkinter import ttk
 from tkinter.constants import BOTH, LEFT, SINGLE, TRUE, X
 from typing import Optional
 from adb_command import online, offline, sign_in, sign_out
 from PIL import Image, ImageTk
 import tkinter as tk
-import os, json
+import os
+import json
+from random import randrange
+
+img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg']
+
+img_chosed = img_list[randrange(len(img_list))]
 
 
 def creat_user():
@@ -36,14 +51,13 @@ def on_select(event):
     with open('function_value.json') as json_file:
         combobox_values = json.load(json_file)
 
-
     query_listbox.delete(0, 'end')
     for item in combobox_values[selected]:
         query_listbox.insert('end', item)
 
 
 window = tk.Tk()
-window.title("MAJAJA")
+window.title("MAJAJA v0.0.1 Alpha")
 window.resizable(False, False)
 
 '''
@@ -51,7 +65,7 @@ window.resizable(False, False)
 '''
 img_frame = tk.Frame(window)
 img_frame.pack(side=tk.LEFT)
-selected_image = Image.open('gi_joe_majaja.jpg')
+selected_image = Image.open(img_chosed)
 selected_image = selected_image.resize((240, 180), Image.ANTIALIAS)
 img = ImageTk.PhotoImage(selected_image)
 panel = tk.Label(img_frame, image=img)
