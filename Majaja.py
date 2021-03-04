@@ -33,7 +33,7 @@ def on_select(event):
     selected = event.widget.get()
 
     combobox_values = {
-        'Call': ['Call Ava Max', 'Call Ava', 'Call Starbucks','call','call starbucks near my destination','call KFC near my destination','call starbucks in taipei','dial KFC in taipei','I need to call 0999123','I want to call 0999234','please dial 0999345','dial 0999456', 'call 0999567','please call 0999678',"dial john smith number",'please call john smith','dial smith','Call Hotels near my location','Call Gas Station near me'],
+        'Call': ['Call Ava Max', 'Call Ava', 'Call Starbucks','call','call starbucks near my destination','call KFC near my destination','call starbucks in taipei','dial KFC in taipei','I need to call 0999123','I want to call 0999234','please dial 0999345','dial 0999456', 'call 0999567','please call 0999678',"dial john smith number",'please call john smith','dial smith','Call Hotels near my location','Call Gas Station near me','Call starbucks located on Roosevelt Road','Call KFC located on Roosevelt Road'],
         'Msg': ['SMS John', 'SMS John Smith', 'Send message to John', 'Send message to John Smith'],
         'Navi': ['Navigate to Taipei 101', 'Starbucks', 'Coffee shop'],
         'Radio': ['Play FM Radio',"Play AM Radio", 'Play 1130', 'tune to 90.5 FM','Tune to 930 AM','Tune to 730 AM','Tune to 1000 AM','Previous Station','Next Station', 'Play car radio'],
