@@ -1,10 +1,10 @@
-import tkinter as tk
 from tkinter import ttk
 from tkinter.constants import BOTH, LEFT, SINGLE, TRUE, X
 from typing import Optional
 from adb_command import online, offline, sign_in, sign_out
-import os
 from PIL import Image, ImageTk
+import tkinter as tk
+import os, json
 
 
 def creat_user():
@@ -32,6 +32,11 @@ def on_select(event):
 
     selected = event.widget.get()
 
+<<<<<<< HEAD
+    with open('function_value.json') as json_file:
+        combobox_values = json.load(json_file)
+
+=======
     combobox_values = {
         'Call': ['Call Ava Max', 'Call Ava', 'Call Starbucks','call','call starbucks near my destination','call KFC near my destination','call starbucks in taipei','dial KFC in taipei',
         'I need to call 0999123','I want to call 0999234','please dial 0999345','dial 0999456', 'call 0999567','please call 0999678',"dial john smith number",'please call john smith','dial smith','Call Hotels near my location','Call Gas Station near me','Call starbucks located on Roosevelt Road','Call KFC located on Roosevelt Road','Dial starbucks which is Open Now near by me','Dial KFC which is Open Now near by me','Call Starbucks with 5 star Rating','Call KFC with 5 star Rating near Roosevelt Road'],
@@ -40,6 +45,7 @@ def on_select(event):
         'Radio': ['Play FM Radio',"Play AM Radio", 'Play 1130', 'tune to 90.5 FM','Tune to 930 AM','Tune to 730 AM','Tune to 1000 AM','Previous Station','Next Station', 'Play car radio'],
         'SMS': ['Read New messages','Read messages', 'Please Text 0978937968 How are you?', 'Reply']
     }
+>>>>>>> 2f76d2c2e3ff5513236ad45a8dc16ae4197eb51e
 
     query_listbox.delete(0, 'end')
     for item in combobox_values[selected]:
