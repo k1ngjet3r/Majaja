@@ -18,7 +18,7 @@ import os
 import json
 from random import randrange
 
-img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg']
+img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg', 'gi_joe_meme_1.png', 'gi_joe_meme_2.jpg']
 
 img_chosed = img_list[randrange(len(img_list))]
 
