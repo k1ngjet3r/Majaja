@@ -11,7 +11,7 @@
 from tkinter import Radiobutton, ttk
 from tkinter.constants import ANCHOR, BOTH, LEFT, SINGLE, TOP, TRUE, X, Y
 from typing import Optional
-from adb_command import online, offline, sign_in, sign_out
+from adb_command import adb_root, online, offline, sign_in, sign_out, pin_lock, pw_lock, pattern_lock, adb_root
 from PIL import Image, ImageTk
 import tkinter as tk
 import os
@@ -67,8 +67,17 @@ def on_select(event):
     for item in combobox_values[selected]:
         query_listbox.insert('end', item)
 
+def security_setting():
+    security_type = security_combobox.get()
+    print('[SECURITY] setting security type: {}'.format(security_type))
+    if security_type == 'PIN':
+        pin_lock()
+    elif security_type == 'Password':
+        pw_lock()
+    elif security_type == 'Pattern':
+        pattern_lock()
 
-
+adb_root()
 
 window = tk.Tk()
 window.title("MAJAJA v0.0.1 Alpha")
@@ -84,6 +93,18 @@ selected_image = selected_image.resize((240, 180), Image.ANTIALIAS)
 img = ImageTk.PhotoImage(selected_image)
 panel = tk.Label(img_frame, image=img)
 panel.pack()
+
+# mode-selection frame
+mode_frame = tk.Frame(img_frame)
+mode_frame.pack()
+
+mode_var = tk.IntVar(None, 1)
+
+speech_mode = tk.Radiobutton(mode_frame, text='Speech Mode', variable=mode_var, value=1)
+speech_mode.pack(side=tk.LEFT)
+
+Majami_mode = tk.Radiobutton(mode_frame, text='Majami Mode', variable=mode_var, value=2)
+Majami_mode.pack(side=tk.LEFT)
 
 
 
@@ -144,14 +165,29 @@ user_label.pack()
 
 create_user_frame = tk.Frame(user_rlt_frame, borderwidth=2, relief='groove')
 create_user_frame.pack(side=tk.TOP, fill='y')
-creat_user_lbl = tk.Label(create_user_frame, text='Create New User', font='Helvetica 9 bold')
+creat_user_lbl = tk.Label(create_user_frame, text='Create New User', width=23 ,font='Helvetica 9 bold')
 creat_user_lbl.pack(side=tk.TOP)
-user_name_label = tk.Label(create_user_frame, text='Name:')
+user_name_label = tk.Label(create_user_frame, text='Name:', width=5)
 user_name_label.pack(side=tk.LEFT)
 user_enrty = tk.Entry(create_user_frame, width=12)
 user_enrty.pack(side=tk.LEFT)
-user_btn = tk.Button(create_user_frame, text='Create', command=creat_user)
+user_btn = tk.Button(create_user_frame, text='Create', command=creat_user, width=5, bg='light grey')
 user_btn.pack(side=tk.LEFT)
+
+security_frm = tk.Frame(user_rlt_frame, borderwidth=2, relief='groove')
+security_frm.pack()
+security_lbl = tk.Label(security_frm, text='Security Setting', width=23, font='Helvetica 9 bold')
+security_lbl.pack()
+security_title_label = tk.Label(security_frm, text='Type:', width=5)
+security_title_label.pack(side=tk.LEFT)
+security_combobox = ttk.Combobox(security_frm, values=['PIN', 'Password', 'Pattern'], width=9)
+security_combobox.pack(side=tk.LEFT)
+security_btn = tk.Button(security_frm, text='Set', width=5, command=security_setting, bg='light grey')
+security_btn.pack(side=tk.LEFT)
+
+# max_user_btn = tk.Button(user_rlt_frame, text='Max User')
+# max_user_btn.pack()
+
 
 
 '''
@@ -161,17 +197,20 @@ user_btn.pack(side=tk.LEFT)
 cmd_frame = tk.Frame(window, width=300)
 cmd_frame.pack(side=tk.LEFT, fill=tk.Y)
 
-# mode-selection frame
-mode_frame = tk.Frame(cmd_frame)
-mode_frame.pack()
+cmd_lbl = tk.Label(cmd_frame, text='Query Generator', font='Helvetica 10 bold', width=29)
+cmd_lbl.pack()
 
-mode_var = tk.IntVar(None, 1)
+# # mode-selection frame
+# mode_frame = tk.Frame(cmd_frame)
+# mode_frame.pack()
 
-speech_mode = tk.Radiobutton(mode_frame, text='Speech Mode', variable=mode_var, value=1)
-speech_mode.pack(side=tk.LEFT)
+# mode_var = tk.IntVar(None, 1)
 
-Majami_mode = tk.Radiobutton(mode_frame, text='Majami Mode', variable=mode_var, value=2)
-Majami_mode.pack(side=tk.LEFT)
+# speech_mode = tk.Radiobutton(mode_frame, text='Speech Mode', variable=mode_var, value=1)
+# speech_mode.pack(side=tk.LEFT)
+
+# Majami_mode = tk.Radiobutton(mode_frame, text='Majami Mode', variable=mode_var, value=2)
+# Majami_mode.pack(side=tk.LEFT)
 
 
 # top frame that contains function label and drop-down selecter (combobox)
@@ -180,7 +219,7 @@ top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function')
 function_label.pack(side=tk.LEFT)
 
-combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio'])
+combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio'], width=24)
 combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
 
@@ -202,8 +241,8 @@ send_btn_frame = tk.Frame(cmd_frame)
 send_btn_frame.pack(side=tk.TOP)
 
 send_btn = tk.Button(send_btn_frame, text='Execute',
-                     width=10, command=exe_command)
-send_btn.pack(fill=X)
+                     width=30, command=exe_command, bg='light grey')
+send_btn.pack(side=tk.LEFT)
 
 window.call('wm', 'attributes', '.', '-topmost', '1')
 

@@ -5,7 +5,8 @@ import time
     This is mainly designed for 10" screen only
     There is currently no program for 13"
 '''
-
+def adb_root():
+    os.system('adb root')
 
 def online():
     os.system('adb shell "svc wifi enable"')
@@ -37,3 +38,12 @@ def sign_out():
     os.system('adb shell input tap 0 600')
     os.system('adb shell input tap 1850 200')
     os.system('adb shell input tap 600 700')
+
+def pin_lock():
+    os.system('adb shell locksetting set-pin 0000')
+
+def pw_lock():
+    os.system('adb shell locksetting set-password 0000')
+
+def pattern_lock():
+    os.system('adb shell locksetting set-pattern 14789')
