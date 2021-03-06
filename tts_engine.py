@@ -1,4 +1,3 @@
-from gtts import gTTS
 import pyttsx3, os, time
 
 
