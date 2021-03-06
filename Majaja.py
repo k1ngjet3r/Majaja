@@ -8,9 +8,7 @@
     GUI is still not optimized, FYI
 '''
 
-from tkinter import Radiobutton, ttk
-from tkinter.constants import ANCHOR, BOTH, LEFT, SINGLE, TOP, TRUE, X, Y
-from typing import Optional
+from tkinter import ttk
 from adb_command import adb_root, online, offline, sign_in, sign_out, pin_lock, pw_lock, pattern_lock, adb_root
 from PIL import Image, ImageTk
 import tkinter as tk
@@ -230,7 +228,7 @@ var = tk.StringVar()
 # var.set((1, 2, 3))
 
 query_listbox = tk.Listbox(
-    query_listbox_frame, listvariable=var, selectmode=SINGLE, width=35, height=8)
+    query_listbox_frame, listvariable=var, selectmode=tk.SINGLE, width=35, height=8)
 query_listbox.pack(side=tk.LEFT)
 
 scrollbar = tk.Scrollbar(query_listbox_frame, orient="vertical")
