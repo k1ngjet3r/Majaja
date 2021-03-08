@@ -52,9 +52,15 @@
         "Coffee shop",
         "cancel navigation",
         "take me to home",
-        "take me to work"
+        "take me to work",
+        "navigate to coffee shop",
+        "navigate to gas station",
+        "gas station",
+        "mute voice guidance",
+        "unmute voice guidance",
     ],
     "Radio":[
+        "play radio",
         "Play FM Radio",
         "Play AM Radio",
         "Play 1130",
@@ -64,7 +70,18 @@
         "Tune to 1000 AM",
         "Previous Station",
         "Next Station",
-        "Play car radio"
+        "Play car radio",
+        "turn up the volume",
+        "turn down the volume",
+        "tune 1030 AM ",
+        "play WKQI FM Radio",
+        "tune 88.5 FM "
+      
+    ],
+    "Other":[
+        "what is the latest news",
+        "turn on Bluetooth",
+        "turn off Bluetooth"
     ]
 
 
