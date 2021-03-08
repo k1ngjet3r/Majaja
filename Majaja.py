@@ -15,7 +15,7 @@ import tkinter as tk
 import os
 import json
 from random import randrange
-from tts_engine import tts
+from tts_engine import hey_google_cmd, adb_cmd
 
 # load the image file
 img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg', 'gi_joe_meme_1.png', 'gi_joe_meme_2.jpg']
@@ -49,9 +49,14 @@ def exe_command():
 
     print('[MODE] {}'.format(mode_list[mode-1]))
     # if user selected "speech mode"
-    if mode == 1:
-        tts(query)
+    if mode == 1 and var_hey_google == 1:
+        hey_google_cmd(query)
         print('[TTS] {}'.format(query))
+
+    elif mode == 1 and var_hey_google == 0:
+        adb_cmd(query)
+        print('[HeyGoogle/TTS] {}'.format(query))
+
     # if user selected "Majami mode"
     elif mode == 2:
         query = query.replace(' ', '\ ')
@@ -241,7 +246,7 @@ combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
 
 var_hey_google = tk.IntVar()
-hey_google_checkbox = tk.Checkbutton(top_frame, text='Hey Google', variable=var_hey_google, onvalue=1, offvalue=0, bg=common_bg, fg=common_fg)
+hey_google_checkbox = tk.Checkbutton(top_frame, text='Hey Google', variable=var_hey_google, onvalue=1, offvalue=0, bg=common_bg, fg=common_fg, activebackground=common_bg, activeforeground=common_fg, selectcolor=common_bg)
 hey_google_checkbox.pack(side=tk.LEFT)
 
 sep= tk.Frame(cmd_frame, height=6, bg=common_bg)

@@ -1,5 +1,7 @@
 import pyttsx3, os, time
 
+from pyttsx3 import engine
+
 
 def activate_ga():
     os.system('adb shell am start -n com.google.android.carassistant/com.google.android.apps.gsa.binaries.auto.app.voiceplate.VoicePlateActivity')
@@ -7,12 +9,16 @@ def activate_ga():
 def tts(query):
     engine = pyttsx3.init()
     engine.setProperty('rate', 105)
-    # activate Google Assistant via adb
-    activate_ga()
-    # wait for 0.8 sec
-    time.sleep(0.8)
     # giving the command via speaker
     engine.say(query)
     engine.runAndWait()
 
+def hey_google_cmd(query):
+    tts('Hey Google')
+    time.sleep(1)
+    tts(query)
 
+def adb_cmd(query):
+    activate_ga()
+    time.sleep(1)
+    tts(query)
