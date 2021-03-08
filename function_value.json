@@ -57,7 +57,7 @@
         "navigate to gas station",
         "gas station",
         "mute voice guidance",
-        "unmute voice guidance",
+        "unmute voice guidance"
     ],
     "Radio":[
         "play radio",
@@ -75,8 +75,21 @@
         "turn down the volume",
         "tune 1030 AM ",
         "play WKQI FM Radio",
-        "tune 88.5 FM "
-      
+        "tune 88.5 FM"
+    ],
+    "Media":[
+        "pause",
+        "resume",
+        "next",
+        "previous",
+        "turn up the volume",
+        "turn down the volume"
+
+
+
+
+
+
     ],
     "Other":[
         "what is the latest news",
