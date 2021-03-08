@@ -75,7 +75,7 @@ def security_setting():
     elif security_type == 'Pattern':
         pattern_lock()
 
-adb_root()
+# adb_root()
 
 common_fg = 'white'
 common_bg = 'grey25'
