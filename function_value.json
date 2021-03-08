@@ -50,7 +50,9 @@
         "Navigate to Taipei 101",
         "Starbucks",
         "Coffee shop",
-        "cancel navigation"
+        "cancel navigation",
+        "take me to home",
+        "take me to work"
     ],
     "Radio":[
         "Play FM Radio",
