@@ -25,11 +25,11 @@ img_chosed = img_list[randrange(len(img_list))]
 img_directory = os.getcwd() + '\\img\\' + img_chosed
 
 # load the sound file
-sound_list = []
+# sound_list = []
 
-sound_chosed = sound_list[randrange(len(sound_list))]
+# sound_chosed = sound_list[randrange(len(sound_list))]
 
-sound_directory = os.getcwd() + '\\start_sound\\' + sound_chosed
+# sound_directory = os.getcwd() + '\\start_sound\\' + sound_chosed
 
 
 def creat_user():
@@ -236,9 +236,13 @@ top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function', bg=common_bg, fg=common_fg)
 function_label.pack(side=tk.LEFT)
 
-combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio', 'Other', 'Media'], width=24)
+combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio', 'Other', 'Media'], width=12)
 combobox.pack(side=tk.LEFT)
 combobox.bind('<<ComboboxSelected>>', on_select)
+
+var_hey_google = tk.IntVar()
+hey_google_checkbox = tk.Checkbutton(top_frame, text='Hey Google', variable=var_hey_google, onvalue=1, offvalue=0, bg=common_bg, fg=common_fg)
+hey_google_checkbox.pack(side=tk.LEFT)
 
 sep= tk.Frame(cmd_frame, height=6, bg=common_bg)
 sep.pack(side=tk.TOP)
