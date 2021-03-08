@@ -37,7 +37,8 @@
         "I would like to call John smith",
         "I need to call John smith",
         "call john Smith cell",
-        "call lewis hamilton cell"
+        "call lewis hamilton cell",
+        "call Smith at home"
 
     ],
     "SMS":[
@@ -45,6 +46,7 @@
         "SMS John Smith",
         "Send message to John",
         "Send message to John Smith",
+        "Send message to AVA MAX work hi",
         "send message to Lewis",
         "Read New messages",
         "Read messages",
@@ -58,7 +60,9 @@
         "send message to",
         "I want to Text to Lewis Got out of the work",
         "I want to Text to John Smith",
-        "New Message to John Smith I am driving please text me"
+        "New Message to John Smith I am driving please text me",
+        "Text John work",
+        "Text AVA work"
 
 
     ],
@@ -91,7 +95,8 @@
         "turn down the volume",
         "tune 1030 AM ",
         "play WKQI FM Radio",
-        "tune 88.5 FM"
+        "tune 88.5 FM",
+        "tune KQED FM"
     ],
     "Media":[
         "pause",
