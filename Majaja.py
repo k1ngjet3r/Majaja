@@ -1,5 +1,5 @@
 '''
-    This is version 0.1.1 Alpha
+    This is version 1.0.0 Beta
 
     Still updating the function and value to the function_value.json for Google Assistant Command query
 
@@ -81,7 +81,7 @@ common_fg = 'white'
 common_bg = 'grey25'
 
 window = tk.Tk()
-window.title("MAJAJA v0.0.1 Alpha")
+window.title("MAJAJA v1.0.0 Beta")
 window.resizable(False, False)
 
 
