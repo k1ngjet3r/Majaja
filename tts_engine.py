@@ -13,6 +13,7 @@ def tts(query):
     time.sleep(0.8)
     # giving the command via speaker
     engine.say(query)
+    
     engine.runAndWait()
 
 
