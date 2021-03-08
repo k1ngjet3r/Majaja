@@ -17,6 +17,7 @@ def offline():
 
 
 def sign_in():
+    adb_root()
     os.system('adb shell input tap 0 600')
     os.system('adb shell input tap 1850 200')
     os.system('adb shell input tap 700 500')
@@ -35,15 +36,19 @@ def sign_in():
 
 
 def sign_out():
+    adb_root()
     os.system('adb shell input tap 0 600')
     os.system('adb shell input tap 1850 200')
     os.system('adb shell input tap 600 700')
 
 def pin_lock():
+    adb_root()
     os.system('adb shell locksetting set-pin 0000')
 
 def pw_lock():
+    adb_root()
     os.system('adb shell locksetting set-password 0000')
 
 def pattern_lock():
+    adb_root()
     os.system('adb shell locksetting set-pattern 14789')
