@@ -17,9 +17,19 @@ import json
 from random import randrange
 from tts_engine import tts
 
+# load the image file
 img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg', 'gi_joe_meme_1.png', 'gi_joe_meme_2.jpg']
 
 img_chosed = img_list[randrange(len(img_list))]
+
+img_directory = os.getcwd() + '\\img\\' + img_chosed
+
+# load the sound file
+sound_list = []
+
+sound_chosed = sound_list[randrange(len(sound_list))]
+
+sound_directory = os.getcwd() + '\\start_sound\\' + sound_chosed
 
 
 def creat_user():
@@ -90,7 +100,7 @@ window.resizable(False, False)
 '''
 img_frame = tk.Frame(window, width=500, height=200, bg=common_bg)
 img_frame.pack(side=tk.LEFT, fill=tk.Y)
-selected_image = Image.open(img_chosed)
+selected_image = Image.open(img_directory)
 selected_image = selected_image.resize((240, 180), Image.ANTIALIAS)
 img = ImageTk.PhotoImage(selected_image)
 panel = tk.Label(img_frame, image=img, bg=common_bg, fg=common_fg)
