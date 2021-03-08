@@ -2,6 +2,9 @@
     "Call": [
         "Call Ava Max",
         "Call Ava",
+        "call John",
+        "dial smith",
+        "call smith",
         "Call Starbucks",
         "call",
         "call starbucks near my destination",
@@ -16,7 +19,6 @@
         "please call 0999678",
         "dial john smith number",
         "please call john smith",
-        "dial smith",
         "Call Hotels near my location",
         "Call Gas Station near me",
         "Call starbucks located on Roosevelt Road",
@@ -32,7 +34,8 @@
         "can you call 0999999",
         "I would like to call John",
         "I would like to call smith",
-        "I would like to call John smith"
+        "I would like to call John smith",
+        "I need to call John smith"
     ],
     "SMS":[
         "SMS John",
@@ -45,9 +48,13 @@
         "Please Text 0978937968 How are you?",
         "Reply",
         "send message to Lewis",
-        "SMS to 0902001256 I am driving please text me",
-        "SMS to 0902001256"
-        
+        "SMS 0902001256 I am driving please text me",
+        "SMS 0902001256",
+        "send message to",
+        "I want to Text to Lewis Got out of the work",
+        "I want to Text to John Smith"
+
+
     ],
     "Navi":[
         "Navigate to Taipei 101",
