@@ -16,6 +16,7 @@ import os
 import json
 from random import randrange
 from tts_engine import hey_google_cmd, adb_cmd
+from playsound import playsound
 
 # load the image file
 img_list = ['gi_joe.jpg', 'gi_joe_majaja.jpg', 'gi_joe_meme_1.png', 'gi_joe_meme_2.jpg']
@@ -89,6 +90,8 @@ def security_setting():
         pw_lock()
     elif security_type == 'Pattern':
         pattern_lock()
+
+
 
 # adb_root()
 
@@ -284,5 +287,7 @@ send_btn = tk.Button(send_btn_frame, text='Execute',
 send_btn.pack(side=tk.LEFT)
 
 window.call('wm', 'attributes', '.', '-topmost', '1')
+
+playsound('100_dollar.mp3')
 
 window.mainloop()
