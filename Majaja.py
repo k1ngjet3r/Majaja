@@ -251,10 +251,9 @@ top_frame.pack(side=tk.TOP)
 function_label = tk.Label(top_frame, text='Function', bg=common_bg, fg=common_fg)
 function_label.pack(side=tk.LEFT)
 
-combobox = ttk.Combobox(top_frame, values=['Call', 'SMS', 'Navi', 'Radio', 'Other', 'Media'], width=12)
+combobox = ttk.Combobox(top_frame, values=['Call Smoke','call FN', 'call LN', 'SMS', 'Navi', 'Radio', 'Other', 'Media'], width=12)
 combobox.pack(side=tk.LEFT)
-combobox.bind('<<ComboboxSelected>>', on_select)
-
+combobox.bind('<<ComboboxSelected>>', on_select),
 var_hey_google = tk.IntVar()
 hey_google_checkbox = tk.Checkbutton(top_frame, text='Hey Google', variable=var_hey_google, onvalue=1, offvalue=0, bg=common_bg, fg=common_fg, activebackground=common_bg, activeforeground=common_fg, selectcolor=common_bg)
 hey_google_checkbox.pack(side=tk.LEFT)
