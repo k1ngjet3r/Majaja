@@ -30,6 +30,13 @@
         "call James at work",
         "call Guzman at home",
         "call Stark"
+    ],
+    "call location":[
+        "call Startbucks",
+        "call ColdStone",
+        "call KFC",
+        "call Gas Station",
+        "Call High priced Hotel"
 
     ],
     "SMS":[
