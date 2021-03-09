@@ -233,8 +233,6 @@ media_ctrl_frm.pack()
 # max_user_btn = tk.Button(user_rlt_frame, text='Max User')
 # max_user_btn.pack()
 
-
-
 '''
     Frame that holds command control
 '''
@@ -286,8 +284,36 @@ send_btn = tk.Button(send_btn_frame, text='Execute',
                      width=30, command=exe_command, bg='grey', font='Helvetica 9 bold')
 send_btn.pack(side=tk.LEFT)
 
+
+'''
+    Call, SMS, Navi control frame
+'''
+
+mulit_frame = tk.Frame(window, bg=common_bg)
+mulit_frame.pack(side=tk.LEFT, fill=tk.Y)
+multi_lbl = tk.Label(mulit_frame, text='Multi Control', font='Helvetica 10 bold', width=29, bg=common_bg, fg='goldenrod1')
+multi_lbl.pack()
+
+call_frame = tk.Frame(mulit_frame, bg=common_bg, borderwidth=2, relief='groove')
+call_frame.pack()
+call_lbl = tk.Label(call_frame, text='Call', font='Helvetica 10 bold', bg=common_bg, fg=common_fg)
+call_lbl.pack()
+
+fn_combox = ttk.Combobox(call_frame, width=10)
+fn_combox.pack(side=tk.LEFT)
+
+ln_combo = ttk.Combobox(call_frame, width=10)
+ln_combo.pack(side=tk.LEFT)
+
+call_exe_btn = tk.Button(call_frame, text='Send', width=5, bg='grey', font='Helvetica 9 bold')
+call_exe_btn.pack(side=tk.LEFT)
+
+
+
 window.call('wm', 'attributes', '.', '-topmost', '1')
 
-playsound('100_dollar.mp3')
+
+
+# playsound('100_dollar.mp3')
 
 window.mainloop()
