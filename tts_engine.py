@@ -15,10 +15,12 @@ def tts(query):
 
 def hey_google_cmd(query):
     tts('Hey Google')
-    time.sleep(1)
+    time.sleep(0.8)
     tts(query)
 
 def adb_cmd(query):
     activate_ga()
-    time.sleep(1)
+    time.sleep(0.8)
     tts(query)
+
+# hey_google_cmd('Hello')

@@ -49,11 +49,11 @@ def exe_command():
 
     print('[MODE] {}'.format(mode_list[mode-1]))
     # if user selected "speech mode"
-    if mode == 1 and var_hey_google == 1:
+    if mode == 1 and var_hey_google.get() == 1:
         hey_google_cmd(query)
         print('[TTS] {}'.format(query))
 
-    elif mode == 1 and var_hey_google == 0:
+    elif mode == 1 and var_hey_google.get() == 0:
         adb_cmd(query)
         print('[HeyGoogle/TTS] {}'.format(query))
 
