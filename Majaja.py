@@ -1,11 +1,11 @@
 '''
-    This is version 1.0.0 Beta
+    This is version 1.1.0 Beta
 
     Still updating the function and value to the function_value.json for Google Assistant Command query
 
     Current function including internet conncetion control, google account login or out control, create user, and Google Assistant command sender
 
-    GUI is still not optimized, FYI
+    
 '''
 
 from tkinter import ttk
@@ -96,7 +96,7 @@ common_fg = 'white'
 common_bg = 'grey25'
 
 window = tk.Tk()
-window.title("MAJAJA v1.0.0 Beta")
+window.title("MAJAJA v1.1.0 Beta")
 window.resizable(False, False)
 
 
@@ -207,6 +207,26 @@ security_combobox.pack(side=tk.LEFT)
 security_btn = tk.Button(security_frm, text='Set', width=5, command=security_setting, bg='grey', font='Helvetica 9 bold')
 security_btn.pack(side=tk.LEFT)
 
+sep= tk.Frame(user_rlt_frame, height=6, bg=common_bg)
+sep.pack(side=tk.TOP)
+
+media_lbl = tk.Label(user_rlt_frame, text='Media', width=22, font='Helvetica 10 bold', bg=common_bg, fg='goldenrod1')
+media_lbl.pack()
+
+media_ctrl_frm = tk.Frame(user_rlt_frame, borderwidth=2, relief='groove', bg=common_bg)
+
+media_ctrl_title = tk.Label(media_ctrl_frm, text='Media Control', width=23, font='Helvetica 9 bold', bg=common_bg, fg=common_fg)
+media_ctrl_title.pack()
+previous_btn = tk.Button(media_ctrl_frm, text='Pervious', bg='grey', font='Helvetica 8 bold', width=7)
+previous_btn.pack(side=tk.LEFT)
+
+play_pause_btn = tk.Button(media_ctrl_frm, text='Play/Pause', bg='grey', font='Helvetica 8 bold')
+play_pause_btn.pack(side=tk.LEFT)
+
+next_btn = tk.Button(media_ctrl_frm, text='Next', width=4, bg='grey', font='Helvetica 8 bold')
+next_btn.pack(side=tk.LEFT)
+
+media_ctrl_frm.pack()
 # max_user_btn = tk.Button(user_rlt_frame, text='Max User')
 # max_user_btn.pack()
 
@@ -221,19 +241,6 @@ cmd_frame.pack(side=tk.LEFT, fill=tk.Y)
 
 cmd_lbl = tk.Label(cmd_frame, text='Query Generator', font='Helvetica 10 bold', width=29, bg=common_bg, fg='goldenrod1')
 cmd_lbl.pack()
-
-# # mode-selection frame
-# mode_frame = tk.Frame(cmd_frame)
-# mode_frame.pack()
-
-# mode_var = tk.IntVar(None, 1)
-
-# speech_mode = tk.Radiobutton(mode_frame, text='Speech Mode', variable=mode_var, value=1)
-# speech_mode.pack(side=tk.LEFT)
-
-# Majami_mode = tk.Radiobutton(mode_frame, text='Majami Mode', variable=mode_var, value=2)
-# Majami_mode.pack(side=tk.LEFT)
-
 
 # top frame that contains function label and drop-down selecter (combobox)
 top_frame = tk.Frame(cmd_frame, bg=common_bg)
