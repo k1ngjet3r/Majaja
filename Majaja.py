@@ -316,3 +316,4 @@ window.call('wm', 'attributes', '.', '-topmost', '1')
 
 playsound('pornhub intro.mp3')
 window.mainloop()
+playsound('100_dollar.mp3')
