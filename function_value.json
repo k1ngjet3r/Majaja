@@ -82,35 +82,48 @@
     ],
     "SMS":[
         "SMS",
-        "SMS John",
-        "SMS John Smith",
-        "SMS Lewis",
-        "SMS Lewis Hamilton",
-        "SMS Natalie",
-        "SMS Natalie Henderson",
+        "SMS 0902001256",
         "SMS Walter",
         "SMS Walter White",
-
-        "SMS 0902001256 I am driving please text me",
-        "SMS to 0902235823 I am driving please text me",
-        "SMS 0902001256"
+        "SMS John Smith mobile",
+        "SMS John Smith work",
+        "SMS John Smith work phone",
+        "SMS 0902001256 My name is jeff",
+        "SMS John Smith mobile My name is jeff",
+        "SMS John Smith work My name is jeff",
+        "SMS John Smith work phone My name is jeff",
+        "SMS Majaja"
     ],
     "Message":[
-        "send message",
-        "send message to",
-        "send message to Lewis",
-        "send message to Lewis Hamilton",
-        "Send message to John",
-        "Send message to John Smith",
-        "send message to Natalie",
-        "send message to Natalie Henderson",
-        "send message to Walter", 
-        "send message to Walter White",
-        "Send message to AVA MAX work hi"
-        
-        
-
-
+        "Send message to",
+        "Send message to 0902001256",
+        "Send message to Walter",
+        "Send message to Walter White",
+        "Send message to John Smith mobile",
+        "Send message to John Smith work",
+        "Send message to John Smith work phone",
+        "Send message to 0902001256 My name is jeff",
+        "Send message to John Smith mobile My name is jeff",
+        "Send message to John Smith work My name is jeff",
+        "Send message to John Smith work phone My name is jeff",
+        "Send message to Majaja",
+        "Message to",
+        "Message to 0902001256",
+        "Message to Walter",
+        "Message to Walter White",
+        "Message to John Smith mobile",
+        "Message to John Smith work",
+        "Message to John Smith work phone",
+        "Message to 0902001256 My name is jeff",
+        "Message to John Smith mobile My name is jeff",
+        "Message to John Smith work My name is jeff",
+        "Message to John Smith work phone My name is jeff",
+        "Message to Majaja"
+    ],
+    "Reply":[
+        "Read New messages",
+        "Read messages",
+        "reply"
     ],
     "Navi":[
         "Navigate to Taipei 101",
@@ -123,32 +136,44 @@
         "navigate to gas station",
         "gas station",
         "mute voice guidance",
-        "unmute voice guidance"
+        "unmute voice guidance",
+        "turn up the volume",
+        "turn down the volume"
     ],
     "Radio":[
         "play radio",
+		"Play car radio",
         "Play FM Radio",
         "Play AM Radio",
-        "Play 1130",
-        "tune to 90.5 FM",
-        "Tune to 930 AM",
-        "Tune to 730 AM",
-        "Tune to 1000 AM",
-        "Previous Station",
+		"Play FM ",
+        "Play AM ",
+		"Play 88.5",
+		"Play 90.5 FM",
+		"tune 88.5",
+		"tune 90.5 FM",
+		"tune to 88.5",
+		"tune to 90.5 FM",
+		"Play 1130",
+		"Play one thousand AM",
+		"tune 1130",
+		"tune one thousand one hundred thirty AM",
+		"tune to 1130",
+		"tune to one thousand AM",
+		"tune KQED FM",
+		"Play WKQI FM Radio",
+		"Previous Station",
         "Next Station",
-        "Play car radio",
-        "turn up the volume",
-        "turn down the volume",
-        "tune 1030 AM ",
-        "play WKQI FM Radio",
-        "tune 88.5 FM",
-        "tune KQED FM"
+		"turn up the volume",
+        "turn down the volume"
     ],
     "Media":[
         "pause",
         "resume",
+        "play",
         "next",
         "previous",
+        "turn up the volume",
+        "turn down the volume",
         "turn up the volume",
         "turn down the volume",
         "play songs on Spotify",
@@ -156,19 +181,22 @@
         "play Bon Jovi",
         "play Angel",
         "play Adele",
-        "play Air Supply"
-
-
-
-
-
-
-
-    ],
-    "Other":[
-        "what is the latest news",
+        "play Air Supply",
         "turn on Bluetooth",
         "turn off Bluetooth"
+    ],
+    "Other":[
+        "sports news",
+        "what is the latest news",
+        "turn on Bluetooth",
+        "turn off Bluetooth",
+        "create an appointment event",
+        "create an calendar event",
+        "set a reminder tommorrow 12pm lunch with Alice",
+        "turn up the volume",
+        "turn down the volume",
+        "mute voice guidance",
+        "unmute voice guidance"
     ]
 
 
