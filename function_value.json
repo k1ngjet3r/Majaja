@@ -79,30 +79,36 @@
         "call startbucks within Taipei, Taiwan",
         "call Gas Station within Taipei, Taiwan",
         "call KFC within Taipei, Taiwan"
-
     ],
     "SMS":[
+        "SMS",
         "SMS John",
         "SMS John Smith",
+        "SMS Lewis",
+        "SMS Lewis Hamilton",
+        "SMS Natalie",
+        "SMS Natalie Henderson",
+        "SMS Walter",
+        "SMS Walter White",
+
+        "SMS 0902001256 I am driving please text me",
+        "SMS to 0902235823 I am driving please text me",
+        "SMS 0902001256"
+    ],
+    "Message":[
+        "send message",
+        "send message to",
+        "send message to Lewis",
+        "send message to Lewis Hamilton",
         "Send message to John",
         "Send message to John Smith",
-        "Send message to AVA MAX work hi",
-        "send message to Lewis",
-        "Read New messages",
-        "Read messages",
-        "Please Text 0978937968 How are you?",
-        "Please Text John Smith How are you?",
-        "please text John Smith ",
-        "Reply",
-        "send message to Lewis",
-        "SMS 0902001256 I am driving please text me",
-        "SMS 0902001256",
-        "send message to",
-        "I want to Text to Lewis Got out of the work",
-        "I want to Text to John Smith",
-        "New Message to John Smith I am driving please text me",
-        "Text John work",
-        "Text AVA work"
+        "send message to Natalie",
+        "send message to Natalie Henderson",
+        "send message to Walter", 
+        "send message to Walter White",
+        "Send message to AVA MAX work hi"
+        
+        
 
 
     ],
